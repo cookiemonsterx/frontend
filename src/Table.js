@@ -1,7 +1,46 @@
-import React, {Component} from "react";
+/*import React, {Component} from "react";
 import PropTypes from "prop-types";
 // import key from "weak-key";
-class Table extends Component{
+import {
+  ApolloProvider,
+  ApolloClient,
+  createBatchingNetworkInterface,
+} from 'react-apollo'
+
+
+const networkInterface = createBatchingNetworkInterface({
+  uri: 'http://localhost:8000/graphql',
+  batchInterval: 10,
+  opts: {
+    credentials: 'same-origin',
+  },
+})
+
+const client = new ApolloClient({
+  networkInterface: networkInterface,
+})
+
+class Table extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        [...]
+      </ApolloProvider>
+    )
+  }
+}
+
+
+
+
+
+*/
+
+/* class Table extends Component{
+  
+  
+  
+  
   constructor(){
     super()
     this.state = {
@@ -10,7 +49,7 @@ class Table extends Component{
     }
   }
   componentDidMount() {
-    const endpoint = "http://localhost:8000/api/album/";
+    const endpoint = "http://localhost:8000/graphql/";
     fetch(endpoint)
       .then(response =>  response.json())
       .then(result => this.setState({data:result}));
@@ -46,4 +85,7 @@ Table.propTypes = {
   data: PropTypes.array.isRequired
 }
 
+*/
+/*
 export default Table;
+*/

@@ -1,11 +1,8 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import {render}  from "react-dom";
-import Table from "../src/components/Table"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
-class App extends Component{ 
-render(){
-    return(<Table/>)
-}
-}
-render(<App/>,document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
