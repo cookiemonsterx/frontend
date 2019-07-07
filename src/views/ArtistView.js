@@ -22,10 +22,18 @@ class ArtistView extends React.Component {
   if (loading) return <div>loading ...</div>;
   if (error) return <p>ERROR</p>;
 
+
 if (data !== undefined)
 
   return (
-    <div>
+    <div style={{height:'100vh'}}>
+      
+    <p style={{fontFamily:'BebasNeue Bold', color:'white', fontSize:'50px', position: 'absolute', float: 'right', textAlign: 'center'}}> AMP UP</p>
+     <br></br>
+     <br></br>
+     <br></br>
+     <p style={{fontFamily:'BebasNeue Bold', color:'white', fontSize:'50px', position: 'absolute', float: 'right', textAlign: 'center'}}> THOSE DBS</p>
+
       {data.artists.map((item,i) => {
         console.log(item)
         return(
@@ -36,11 +44,13 @@ if (data !== undefined)
           </Link>
           </p> */}
            {item.name}
+           
           </div>)}
       )}
       </div>
   )}}
 </Query>
+
       )
   }
 }

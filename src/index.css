@@ -1,5 +1,66 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
+
+@font-face {
+  font-family: 'BebasNeue Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/BebasNeue-Bold.ttf'); /* IE9 Compat Modes */
+
+}
+
+@font-face {
+  font-family: 'BebasNeue Book';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/BebasNeue-Book.ttf'); /* IE9 Compat Modes */
+
+}
+
+@font-face {
+  font-family: 'BebasNeue Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/BebasNeue-Light.ttf'); /* IE9 Compat Modes */
+
+}
+
+@font-face {
+  font-family: 'BebasNeue Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/BebasNeue-Regular.ttf'); /* IE9 Compat Modes */
+
+}
+
+
+@font-face {
+  font-family: 'BebasNeue Thin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/BebasNeue-Thin.ttf'); /* IE9 Compat Modes */
+
+}
+/* *{
+  font-family: BebasNeue Thin,sans-serif;
+} */
+
+/* body {
+  font-family: 'Open Sans';
+} */
+
+ /* .nav{
+ background-color: yellow !important; 
+}  */
+
+  .text{
+    font-family: 'BebasNeue Bold' !important;
+}
+
+/* .home-div{
+  background-image: url('./bg.jpg');
+  height: '100vh',
+} */
