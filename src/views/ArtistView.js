@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'
 import gql from 'graphql-tag';
 import { graphql,Query } from 'react-apollo'
 import hit from './hit.png';
-import anathema1 from './anathema1.jpg';
+import anathema from './anathema.jpg';
 import Grid from '@material-ui/core/Grid';
 import pf from './pf.jpg';
 import scorpions from './scorpions.jpg';
+import sam from './sam.jpg';
+import florence2 from './florence2.jpg';
+import seafret from './seafret.jpg';
+import logo2 from './logo2.png';
 
 const query = gql`
 {
@@ -15,6 +19,24 @@ const query = gql`
   }
 }
 `
+
+const query2 = gql`
+{
+  album(id: $albumId) {
+    id
+    title
+    genre
+    year
+    artist {
+      id
+      name
+    }
+  }
+}
+`
+
+
+
 // const anathemaQ = gql`
 // query artist($id:ID){
 //   artist(id: $id) {
@@ -32,7 +54,7 @@ class ArtistView extends React.Component {
     // if (data.loading || !data.allArtists) {
     //   return <div>Loading ... </div>
     // }
-    let images = [anathema1, pf, scorpions]
+    let images = [anathema, pf, scorpions, sam, florence2, seafret]
     return (
 <Query query={query}> 
 {({ data, loading, error }) => {
@@ -64,17 +86,59 @@ if (data !== undefined)
   {
   return(
      <Grid item xs={4}>
+       <div className="container2">
      <div className="polaroid">
-      <img src={images[i]} alt="5 Terre" width="100%"/>
+      <img src={images[i]} alt="5 Terre" width="100%" class="image"/>
+      <div class="overlay">
+        
+    <div class="text">Hello World</div>
+  </div>
        <div class="container">
         <p>{artist.name}</p>
       </div>
     </div>
+    </div>
      </Grid>)})}
   </Grid>
+
+<div className="footer">
+<p style={{margin: '100px 50px 75px 200px', fontFamily:'BebasNeue Bold', color:'black', fontSize:'50px', position: 'absolute', textAlign: 'center'}}>GET PRODUCIN' WITH MUSICDB</p>
+      <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <p style={{margin: '100px 50px 75px 200px', fontFamily:'BebasNeue Bold', color:'black', fontSize:'25px', position: 'absolute', textAlign: 'center'}}>PICK YOUR PREFERRED INSTRUMENT</p>
+     <br></br>
+     <br></br>
+     <p style={{margin: '100px 50px 75px 200px', fontFamily:'BebasNeue Bold', color:'red', fontSize:'15px', position: 'absolute', textAlign: 'center'}}>PICK THE INSTRUMENTS YOU NEED TO COMPOSE YOUR PIECE</p>
+     
+</div>
+<br></br>
+ <br></br>
+  <br></br>
+  <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+<div style={{backgroundColor:'black'}}>
+<img src={logo2} style={{margin: '100px 50px 75px 200px'}} alt="Logo" width="10%" />
+
+
+<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px', right: '100px'}}> PROFILE </p>
+
+
+</div>
+
   </div>
   )}}
 </Query>
+
       )
   }
 }

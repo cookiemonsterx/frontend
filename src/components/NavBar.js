@@ -28,7 +28,7 @@ export default class NavBar extends Component {
             <Toolbar>
                 <Typography variant="title" color="white">
                 <img src={logo} alt="Logo" width="10%" />
-                <p className={'text'} style={profileTextStyle}> PROFILE </p>
+                <p className={'text1'} style={profileTextStyle}> PROFILE </p>
                 <img src={profile} alt="profile" width="5%" height="5%" style={profileStyle}/>
                 
                 </Typography>

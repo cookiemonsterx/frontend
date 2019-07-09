@@ -1,29 +1,21 @@
-/*import React, { Component } from "react";
-import PropTypes from "prop-types";
-class DataProvider extends Component {
-  static propTypes = {
-    endpoint: PropTypes.string.isRequired,
-    render: PropTypes.func.isRequired
-  };
-  state = {
-      data: [],
-      loaded: false,
-      placeholder: "Loading..."
-    };
-  componentDidMount() {
-    fetch(this.props.endpoint)
-      .then(response => {
-        if (response.status !== 200) {
-          return this.setState({ placeholder: "Something went wrong" });
-        }
-        return response.json();
-      })
-      .then(data => this.setState({ data: data, loaded: true }));
-  }
-  render() {
-    const { data, loaded, placeholder } = this.state;
-    return loaded ? this.props.render(data) : <p>{placeholder}</p>;
-  }
+export default function Launch({ launchId }) {
+  return (
+    <Query query={query2} variables={{ artistId }}>
+      {({ data, loading, error }) => {
+        if (loading) return <Loading />;
+        if (error) return <p>ERROR: {error.message}</p>;
+
+        return (
+          <Fragment>
+            <Header image={data.launch.mission.missionPatch}>
+              {data.album.title}
+              {data.album.genre}
+            </Header>
+            <LaunchDetail {...data.launch} />
+            <ActionButton {...data.launch} />
+          </Fragment>
+        );
+      }}
+    </Query>
+  );
 }
-export default DataProvider;
-*/
