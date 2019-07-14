@@ -4,15 +4,19 @@ import { graphql,Query } from 'react-apollo'
 
 
 const query2 = gql`
-{
-    artists {
-    
-        album {
-          title
-        }
-      }
+query AlbumView($id: Int) {
+  artist(id: $id) {
+    id
+    name
+    album{
+      id
+      title
+    }
+  }
 }
 `
+
+
 
 
 
@@ -21,7 +25,9 @@ export default class AlbumView extends Component {
         return (
             <div>
                 
-<Query query={query2}>
+<Query
+variables={{id:this.props.match.params.id}}
+query={query2}>
 
 
 {({data, loading, error}) => {
@@ -32,36 +38,11 @@ export default class AlbumView extends Component {
     return(
         <div>
 
-{data.artists.map((artists) => {
-            return (
-                <div>
-
-                    {artists.album.title}
-                   
-                    </div>
-            )
-        }
-
-
-
-
-
-
-        )}
-
-
-
-        </div>
+{data.artist.album[0].title}
+   </div>
     )
 
-
-
-
 }
-
-
-
-
 
 }
 
@@ -69,18 +50,11 @@ export default class AlbumView extends Component {
 </Query>
 
 
-
-
-
-
-
-
-
-
-
-
                 
             </div>
         )
     }
 }
+
+
+AlbumView = graphql(query2)(AlbumView)

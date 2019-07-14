@@ -10,7 +10,7 @@ import scorpions from './scorpions.jpg';
 import sam from './sam.jpg';
 import florence2 from './florence2.jpg';
 import seafret from './seafret.jpg';
-import logo2 from './logo2.png';
+
 import AlbumView from './AlbumView';
 
 const query = gql`
@@ -19,7 +19,7 @@ const query = gql`
     id, name
 
     album {
-      title
+      id, title
     }
   }
 }
@@ -83,7 +83,12 @@ if (data !== undefined)
     <div class="text" style={{fontSize:'15px'}}>ALBUMS: 
     <br></br>
     <br></br>
-     {artist.album.title}
+
+    <Link to={`/albums/${artist.album[0].id}/`}>
+    {artist.album[0].title}
+            </Link>
+
+     
 
     </div>
   </div>
@@ -96,66 +101,6 @@ if (data !== undefined)
      </Grid>)})}
   </Grid>
 
-<div style={{marginTop: '10px'}}>
-<p style={{margin: '100px 50px 0px 200px', fontFamily:'BebasNeue Bold', color:'black', fontSize:'50px', position: 'absolute', textAlign: 'center'}}>GET PRODUCIN' WITH MUSICDB</p>
-      <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <p style={{margin: '100px 50px 0px 200px', fontFamily:'BebasNeue Bold', color:'black', fontSize:'25px', position: 'absolute', textAlign: 'center'}}>PICK YOUR PREFERRED INSTRUMENT</p>
-     <br></br>
-     <br></br>
-     <p style={{margin: '100px 50px 0px 200px', fontFamily:'BebasNeue Bold', color:'red', fontSize:'15px', position: 'absolute', textAlign: 'center'}}>PICK THE INSTRUMENTS YOU NEED TO COMPOSE YOUR PIECE</p>
-     
-</div>
-<br></br>
- <br></br>
-  <br></br>
-  <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-
-     
-<div style={{backgroundColor:'black', width: "100%"}}>
-<footer className="footer" style={{width: "100%", display: 'flex', alignItems: 'center'}}>
-
-
-
-
-
-  <div style={{width: "30%"}}>
-  <img src={logo2} style={{margin: '100px 0px 75px 200px'}} alt="Logo" width="33%" />
-
-  </div>
-<div style={{width: "30%"}}>
-
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center'}}> PROFILE </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center'}}> SIGN IN </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center'}}> MUSIC </p>
-
-</div>
-
-
-
-</footer>
-
-<div style={{display: 'flex'}}>
-
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center', marginLeft: '50px', marginRight: '50px'}}> LEGAL </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center', marginRight: '50px'}}> PRIVACY CENTRE </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center', marginRight: '50px'}}> PRIVACY POLICY </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center', marginRight: '50px'}}> COOKIES </p>
-<p style={{  fontFamily:'BebasNeue Bold', color:'white', fontSize:'15px',  textalign: 'center', marginRight: '50px'}}> ABOUT ADS </p>
-  
-</div>
-</div>
 
   </div>
   )}}
