@@ -80,13 +80,30 @@ if (data !== undefined)
       <img src={images[i]} alt="5 Terre" width="100%" class="image"/>
       <div class="overlay">
 
-    <div class="text" style={{fontSize:'15px'}}>ALBUMS: 
-    <br></br>
-    <br></br>
+    <div class="text" style={{fontSize:'15px'}}>
+ 
 
-    <Link to={`/albums/${artist.album[0].id}/`}>
-    {artist.album[0].title}
+    {artist.album.map((albums) => {
+            return (
+                <div>
+                     
+      
+
+     <Link to={`/albums/${albums.id}/`}>
+    {albums.title}
             </Link>
+
+                   
+                    </div>
+            )
+        }
+
+
+
+
+
+
+        )}
 
      
 

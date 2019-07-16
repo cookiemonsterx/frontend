@@ -76,10 +76,13 @@ class App extends Component {
           <Route exact path="/" component={ArtistView} />
           
           </div>
+          
          <Route exact path="/albums/:id/" component={AlbumView} />
+        
           {/* <Route exact path="/songs/" component={SongView} />  */}
         
         {/* </div> */}
+        <hr></hr>
         <div style={{marginTop: '10px'}}>
 <p style={{margin: '100px 50px 0px 200px', fontFamily:'BebasNeue Bold', color:'black', fontSize:'50px', position: 'absolute', textAlign: 'center'}}>GET PRODUCIN' WITH MUSICDB</p>
       <br></br>
@@ -143,7 +146,7 @@ class App extends Component {
 
       </Router>
       </ApolloProvider>
-      
+   
     )
   }
 }

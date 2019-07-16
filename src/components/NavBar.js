@@ -25,14 +25,14 @@ export default class NavBar extends Component {
         return (
             <div>
         <AppBar position="static" color="white" className={'nav'}>
-            <Toolbar>
-                <Typography variant="title" color="white">
-                <img src={logo} alt="Logo" width="10%" />
+            
+            <Typography variant="title" color="white">
+                <a href="http://localhost:3000/"> <img src={logo} alt="Logo" width="10%" /> </a>
                 <p className={'text1'} style={profileTextStyle}> PROFILE </p>
                 <img src={profile} alt="profile" width="5%" height="5%" style={profileStyle}/>
                 
                 </Typography>
-            </Toolbar>
+            
         </AppBar>
             </div>
         )
